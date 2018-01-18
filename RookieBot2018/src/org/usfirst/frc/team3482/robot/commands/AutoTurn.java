@@ -14,12 +14,13 @@ public class AutoTurn extends Command{
 		RobotMap.rotationController.setSetpoint(angleTurn);
 	}
 	public void execute(){
-		
+	
+	}
+	public void isFinished(){
+		// anything else to put here?
 	}
 	public void end(){
 		RobotMap.rotationController.disable();
-	}
-	public void isFinished(){
-		
+		end();
 	}
 }
