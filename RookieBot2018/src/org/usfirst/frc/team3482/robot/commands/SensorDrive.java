@@ -7,7 +7,7 @@ import org.usfirst.frc.team3482.robot.RobotMap;
 protected class SensorDrive {
 	double dist = RobotMap.rangeFinder();
 	double speed;
-	protected void drive(speed){
+	protected void drive(double speed){
 		protected void initialize(){
 			RobotMap.drive.arcadeDrive(speed, 0);
 		}
@@ -27,7 +27,7 @@ protected class SensorDrive {
 		}
 		protected void end() {
 			RobotMap.drive.arcadeDrive(0, 0);
-			end(); //whatf
+			end(); //what
 		}
 	}	
 }

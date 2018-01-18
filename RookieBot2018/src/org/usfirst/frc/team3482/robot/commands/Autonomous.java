@@ -1,22 +1,8 @@
 package org.usfirst.frc.team3482.robot.commands;
 
 public class Autonomous{
-	int x;
-	public (x) {
-		if (x = // thingy) {
-			// execute scenario a
-		}
-		if (x = // thingy) {
-			// execute scenario b
-		}
-		if (x = // thingy) {
-			// execute scenario c
-		}
-		if (x = // thingy) {
-			// execute scenario d
-		}
-		if (x = // thingy) {
-			// execute scenario e
-		}
-	}
+	public Autonomous() {
+		AutoSwitch1();
+	} 
 }
+// you could potentially call other autonomous patterns based off of the game data if needed

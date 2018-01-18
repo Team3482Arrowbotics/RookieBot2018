@@ -7,7 +7,7 @@
 
 package org.usfirst.frc.team3482.robot;
 
-import org.usfirst.frc.team3482.robot.commands.Autonomous;
+import org.usfirst.frc.team3482.robot.commands.AutoSwitch1;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -57,7 +57,7 @@ public class Robot extends IterativeRobot {
 		// autoSelected = SmartDashboard.getString("Auto Selector",
 		// defaultAuto);
 		System.out.println("Auto selected: " + m_autoSelected);
-		Autonomous.run(m_autoSelected);
+		AutoSwitch1.start();
 	}
 
 	/**
@@ -74,6 +74,7 @@ public class Robot extends IterativeRobot {
 				// Put default auto code here
 				break;
 		}
+		Scheduler.getInstance().run();
 	}
 
 	/**

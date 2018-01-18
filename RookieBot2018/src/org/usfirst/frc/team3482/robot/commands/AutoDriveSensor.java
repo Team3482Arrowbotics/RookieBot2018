@@ -5,11 +5,11 @@ import org.usfirst.frc.team3482.robot.RobotMap;
 protected class AutoDrive {
 	double dist = RobotMap.rangeFinder();
 	double speed;
-	protected void drive(speed){
-		protected void initialize(){
+	protected void drive(double speed){
+		protected void initialize() {
 			RobotMap.drive.arcadeDrive(speed, 0);
 		}
-		protected void execute(){
+		protected void execute() {
 			// wait until rangefinder hits a certain value
 			while(true) {
 				if (dist >= 1) {
@@ -22,7 +22,7 @@ protected class AutoDrive {
 			}
 		}
 		protected boolean isFinished() {
-			e
+			
 		}
 		protected void end() {
 			RobotMap.drive.arcadeDrive(0, 0);

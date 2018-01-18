@@ -11,13 +11,14 @@ public class AutoDrive {
 			RobotMap.drive.arcadeDrive(speed, 0);
 		}
 		protected void execute() {
-			counter++;
+			timer++;
 		}
-		protected void isFinished() {
+		protected boolean isFinished() {
 			return false;
 		}
 		protected void end() {
 			RobotMap.drive.arcadeDrive(0, 0);
+			timer = 0;
 			end(); //what
 		}
 	}
