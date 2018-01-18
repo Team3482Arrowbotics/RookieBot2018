@@ -17,7 +17,7 @@ public class AutoTurn extends Command{
 	
 	}
 	public void isFinished(){
-		// anything else to put here?
+		
 	}
 	public void end(){
 		RobotMap.rotationController.disable();
