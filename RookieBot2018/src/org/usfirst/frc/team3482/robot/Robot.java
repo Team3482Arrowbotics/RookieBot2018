@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team3482.robot;
 
+import org.usfirst.frc.team3482.robot.commands.DriveToWall;
+
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -51,6 +53,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
+		new DriveToWall().start();
 		m_autoSelected = m_chooser.getSelected();
 		// autoSelected = SmartDashboard.getString("Auto Selector",
 		// defaultAuto);
@@ -70,7 +73,9 @@ public class Robot extends IterativeRobot {
 			default:
 				// Put default auto code here
 				break;
+				
 		}
+		Scheduler.getInstance().run();
 	}
 
 	/**

@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -17,7 +18,9 @@ public class RobotMap {
 	public static SpeedControllerGroup right;
 	public static DifferentialDrive drive;
 	public static AnalogInput rangeFinder;
-	public static AHRS navx;
+	public static AHRSPID navx;
+	public static PIDController gyro;
+	public static PIDDriveOutput pidDrive;
 	public static void init(){
 		//drive talons
 		frontLeft = new WPI_TalonSRX(8);
@@ -31,7 +34,15 @@ public class RobotMap {
 		rangeFinder = new AnalogInput(1);
 		//drive train
 		drive = new DifferentialDrive(left, right);
+		drive.setDeadband(0.1);
 		drive.setSafetyEnabled(false);
-		navx = new AHRS(SPI.Port.kMXP);
+		
+		pidDrive = new PIDDriveOutput(drive);
+		navx = new AHRSPID(SPI.Port.kMXP);
+		gyro = new PIDController(0.07, 0, 0, navx, pidDrive);
+		gyro.setContinuous(true);
+	  	gyro.setAbsoluteTolerance(1);
+		gyro.setInputRange(-180, 180);
+		gyro.setOutputRange(-.6, .6);	
 	}
 }
