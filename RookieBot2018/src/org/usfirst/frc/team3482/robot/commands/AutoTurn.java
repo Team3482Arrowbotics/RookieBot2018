@@ -10,6 +10,8 @@ public class AutoTurn extends Command{
 		angleTurn = aoT;
 	}
 	public void initialize(){
+		RobotMap.navx.reset();
+		RobotMap.rotationController.reset();
 		RobotMap.rotationController.enable();
 		RobotMap.rotationController.setSetpoint(angleTurn);
 	}

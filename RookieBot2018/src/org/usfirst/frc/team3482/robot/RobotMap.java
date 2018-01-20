@@ -19,7 +19,7 @@ public class RobotMap {
 	public static DifferentialDrive drive;
 	public static AnalogInput rangeFinder;
 	public static AHRS navx;
-	public static PIDController pidDrive;
+	public static PIDDriveOutput pidDrive;
 	public static PIDController rotationController;
 	public static void init(){
 		//drive talons
