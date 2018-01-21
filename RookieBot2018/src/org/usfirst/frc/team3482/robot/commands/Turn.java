@@ -1,7 +1,6 @@
 package org.usfirst.frc.team3482.robot.commands;
 
 import org.usfirst.frc.team3482.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Turn extends Command{
@@ -13,7 +12,7 @@ public class Turn extends Command{
 		target = 360 - (start + delta);
 		this.tolerance = tolerance;
 	}
-	protected void execute(){
+	public void execute(){
 		double pos = RobotMap.navx.getYaw();
 		delta = target - pos;
 		double turnSpeed = p * delta;

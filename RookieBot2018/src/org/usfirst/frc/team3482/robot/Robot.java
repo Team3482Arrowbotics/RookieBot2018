@@ -9,6 +9,7 @@ package org.usfirst.frc.team3482.robot;
 
 import org.usfirst.frc.team3482.robot.commands.DriveToWall;
 
+import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,6 +24,7 @@ public class Robot extends IterativeRobot {
 	private SendableChooser<String> m_chooser = new SendableChooser<>();
 	
 	OI oi;
+	UsbCamera cam;
 	String gameData = DriverStation.getInstance().getGameSpecificMessage();
 	
 	boolean driveEnabled = true;
@@ -38,6 +40,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Auto choices", m_chooser);
 		oi = new OI();
 		RobotMap.init();
+		cam = new UsbCamera("Feed", 0);
 	}
 
 	/**

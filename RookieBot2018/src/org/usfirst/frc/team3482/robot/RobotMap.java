@@ -40,9 +40,10 @@ public class RobotMap {
 		pidDrive = new PIDDriveOutput(drive);
 		navx = new AHRSPID(SPI.Port.kMXP);
 		gyro = new PIDController(0.07, 0, 0, navx, pidDrive);
+		gyro.setInputRange(-180, 180);
+		gyro.setOutputRange(-.6, .6);
 		gyro.setContinuous(true);
 	  	gyro.setAbsoluteTolerance(1);
-		gyro.setInputRange(-180, 180);
-		gyro.setOutputRange(-.6, .6);	
+			
 	}
 }
